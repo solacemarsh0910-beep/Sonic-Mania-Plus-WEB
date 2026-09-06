@@ -368,9 +368,7 @@
         backdrop-filter: blur(3px);
         -webkit-tap-highlight-color: transparent;
 
-        transition:
-            transform 0.05s,
-            background 0.05s;
+        transition: none;
     }
 
     .dpad-button.pressed {
@@ -478,9 +476,7 @@
 
         -webkit-tap-highlight-color: transparent;
 
-        transition:
-            transform 0.05s,
-            background 0.05s;
+        transition: none;
     }
 
     .action-button.pressed {
@@ -804,7 +800,7 @@
         <button
             class="action-button"
             id="mobile-super"
-            data-key="KeyW"
+            data-key="KeyQ"
             aria-label="Super">
             SUPER
         </button>
@@ -1244,6 +1240,14 @@
 
         button.addEventListener(
             'pointerdown',
+            press,
+            {
+                passive: false
+            }
+        );
+
+        button.addEventListener(
+            'touchstart',
             press,
             {
                 passive: false
